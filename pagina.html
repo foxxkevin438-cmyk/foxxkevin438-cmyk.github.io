@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataTree – Plataforma Educativa</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="logo">Data<span>Tree</span></div>
+    <ul class="nav-links">
+      <li><a href="#inicio" class="nav-btn active" data-section="inicio">Inicio</a></li>
+      <li><a href="#teoria" class="nav-btn" data-section="teoria">Teoría</a></li>
+      <li><a href="#arboles" class="nav-btn" data-section="arboles">Árboles</a></li>
+      <li><a href="#grafos" class="nav-btn" data-section="grafos">Grafos</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger">☰</div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio" class="section active">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="badge">Estructuras de Datos Interactivas</div>
+      <h1>Aprende <em>Árboles</em><br>y <em>Grafos</em><br>visualmente</h1>
+      <p class="hero-sub">Plataforma educativa con simulaciones reales, recorridos animados y estructuras implementadas en código.</p>
+      <div class="hero-btns">
+        <button class="btn-primary" onclick="goTo('teoria')">Empezar a aprender</button>
+        <button class="btn-ghost" onclick="goTo('arboles')">Ver simulación</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <canvas id="heroCanvas" width="460" height="360"></canvas>
+    </div>
+  </section>
+
+  <!-- TEORÍA -->
+  <section id="teoria" class="section">
+    <div class="section-header">
+      <span class="tag">Módulo 01</span>
+      <h2>Fundamentos Teóricos</h2>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="tab-arboles-t">Árboles</button>
+      <button class="tab" data-tab="tab-grafos-t">Grafos</button>
+      <button class="tab" data-tab="tab-operaciones-t">Operaciones</button>
+      <button class="tab" data-tab="tab-recorridos-t">Recorridos</button>
+    </div>
+
+    <div id="tab-arboles-t" class="tab-content active">
+      <div class="theory-grid">
+        <div class="theory-card">
+          <div class="theory-icon">🌳</div>
+          <h3>¿Qué es un Árbol?</h3>
+          <p>Un árbol es una estructura de datos jerárquica compuesta por nodos. Cada árbol tiene un nodo raíz del que se derivan hijos, formando una relación padre-hijo sin ciclos.</p>
+          <div class="highlight-box">
+            <b>Propiedades clave:</b><br>
+            • Un solo nodo raíz<br>
+            • Cada nodo tiene un padre (excepto la raíz)<br>
+            • Sin ciclos (acíclico)
+          </div>
+        </div>
+        <div class="theory-card">
+          <div class="theory-icon">🔍</div>
+          <h3>Árbol Binario de Búsqueda (BST)</h3>
+          <p>En un BST, para cualquier nodo N: todos los valores del subárbol izquierdo son menores que N, y todos los del derecho son mayores.</p>
+          <div class="highlight-box">
+            <b>Complejidad promedio:</b><br>
+            • Búsqueda: O(log n)<br>
+            • Inserción: O(log n)<br>
+            • Eliminación: O(log n)
+          </div>
+        </div>
+        <div class="theory-card">
+          <div class="theory-icon">📐</div>
+          <h3>Terminología</h3>
+          <p>Conoce los conceptos fundamentales que usarás en toda la plataforma.</p>
+          <div class="highlight-box">
+            <b>Glosario:</b><br>
+            • <b>Raíz:</b> Nodo sin padre<br>
+            • <b>Hoja:</b> Nodo sin hijos<br>
+            • <b>Altura:</b> Máxima profundidad<br>
+            • <b>Profundidad:</b> Distancia a la raíz<br>
+            • <b>Subárbol:</b> Árbol dentro del árbol
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-grafos-t" class="tab-content">
+      <div class="theory-grid">
+        <div class="theory-card">
+          <div class="theory-icon">🕸️</div>
+          <h3>¿Qué es un Grafo?</h3>
+          <p>Un grafo G = (V, E) consiste en un conjunto de vértices (V) y un conjunto de aristas (E) que conectan pares de vértices. Modela relaciones entre objetos.</p>
+          <div class="highlight-box">
+            <b>Tipos:</b><br>
+            • Dirigido (dígrafo): aristas con dirección<br>
+            • No dirigido: aristas sin dirección<br>
+            • Ponderado: aristas con peso
+          </div>
+        </div>
+        <div class="theory-card">
+          <div class="theory-icon">🔗</div>
+          <h3>Representaciones</h3>
+          <p>Los grafos pueden representarse de distintas formas según las necesidades del problema.</p>
+          <div class="highlight-box">
+            <b>Formas comunes:</b><br>
+            • <b>Lista de adyacencia:</b> O(V+E) espacio<br>
+            • <b>Matriz de adyacencia:</b> O(V²) espacio<br>
+            • <b>Lista de aristas:</b> O(E) espacio
+          </div>
+        </div>
+        <div class="theory-card">
+          <div class="theory-icon">🌐</div>
+          <h3>Aplicaciones reales</h3>
+          <p>Los grafos modelan problemas del mundo real en múltiples dominios.</p>
+          <div class="highlight-box">
+            <b>Usos:</b><br>
+            • Redes sociales (amigos)<br>
+            • GPS y rutas (caminos)<br>
+            • Internet (páginas web)<br>
+            • Dependencias de software
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-operaciones-t" class="tab-content">
+      <div class="theory-grid">
+        <div class="theory-card">
+          <div class="theory-icon">➕</div>
+          <h3>Inserción</h3>
+          <p>En un BST, el nuevo nodo se compara con la raíz y desciende por el árbol siguiendo la propiedad BST hasta encontrar una posición vacía.</p>
+          <div class="code-block">
+insert(valor):
+  si raíz es null → raíz = Nodo(valor)
+  si valor &lt; nodo → ir izquierda
+  si valor &gt; nodo → ir derecha
+  repetir recursivamente</div>
+        </div>
+        <div class="theory-card">
+          <div class="theory-icon">🔎</div>
+          <h3>Búsqueda</h3>
+          <p>Aprovecha la propiedad BST para descartar mitades del árbol en cada paso, logrando eficiencia O(log n) en árboles balanceados.</p>
+          <div class="code-block">
+search(valor):
+  si nodo es null → false
+  si valor == nodo → true
+  si valor &lt; nodo → buscar izquierda
+  si valor &gt; nodo → buscar derecha</div>
+        </div>
+        <div class="theory-card">
+          <div class="theory-icon">❌</div>
+          <h3>Eliminación</h3>
+          <p>Tres casos según el nodo a eliminar: sin hijos (hoja), un hijo, o dos hijos (se reemplaza con el sucesor inorden).</p>
+          <div class="code-block">
+Caso 1: hoja → eliminar directamente
+Caso 2: un hijo → enlazar padre con nieto
+Caso 3: dos hijos →
+  sucesor = mínimo(subárbol derecho)
+  reemplazar valor, eliminar sucesor</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-recorridos-t" class="tab-content">
+      <div class="theory-grid">
+        <div class="theory-card">
+          <div class="theory-icon">1️⃣</div>
+          <h3>Preorden (NLR)</h3>
+          <p>Visita primero la Raíz, luego el subárbol izquierdo, luego el derecho. Útil para copiar o serializar el árbol.</p>
+          <div class="code-block">preorden(nodo):
+  visitar(nodo)       // N
+  preorden(izquierda) // L
+  preorden(derecha)   // R</div>
+        </div>
+        <div class="theory-card">
+          <div class="theory-icon">2️⃣</div>
+          <h3>Inorden (LNR)</h3>
+          <p>Visita primero izquierda, luego raíz, luego derecha. En un BST produce los valores <b>ordenados ascendentemente</b>.</p>
+          <div class="code-block">inorden(nodo):
+  inorden(izquierda)  // L
+  visitar(nodo)       // N
+  inorden(derecha)    // R</div>
+        </div>
+        <div class="theory-card">
+          <div class="theory-icon">3️⃣</div>
+          <h3>Postorden (LRN)</h3>
+          <p>Visita izquierda, derecha y finalmente la raíz. Útil para eliminar el árbol o evaluar expresiones.</p>
+          <div class="code-block">postorden(nodo):
+  postorden(izquierda) // L
+  postorden(derecha)   // R
+  visitar(nodo)        // N</div>
+        </div>
+        <div class="theory-card">
+          <div class="theory-icon">4️⃣</div>
+          <h3>Por Niveles (BFS)</h3>
+          <p>Recorre el árbol nivel por nivel usando una cola. Garantiza visitar todos los nodos de profundidad N antes de pasar a N+1.</p>
+          <div class="code-block">niveles(raíz):
+  cola = [raíz]
+  mientras cola no vacía:
+    nodo = cola.dequeue()
+    visitar(nodo)
+    encolar hijos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÁRBOLES -->
+  <section id="arboles" class="section">
+    <div class="section-header">
+      <span class="tag">Módulo 02</span>
+      <h2>Simulación: Árbol Binario de Búsqueda</h2>
+    </div>
+
+    <div class="sim-layout">
+      <!-- Panel de control -->
+      <div class="control-panel">
+        <h3>Controles</h3>
+
+        <div class="control-group">
+          <label>Insertar nodo</label>
+          <div class="input-row">
+            <input type="number" id="treeInput" placeholder="Valor" min="0" max="999" />
+            <button class="btn-action" id="btnInsert">Insertar</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Buscar nodo</label>
+          <div class="input-row">
+            <input type="number" id="treeSearch" placeholder="Valor" />
+            <button class="btn-action btn-search" id="btnSearch">Buscar</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Eliminar nodo</label>
+          <div class="input-row">
+            <input type="number" id="treeDelete" placeholder="Valor" />
+            <button class="btn-action btn-delete" id="btnDelete">Eliminar</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Recorridos</label>
+          <div class="traversal-btns">
+            <button class="btn-trav" data-trav="preorden">Preorden</button>
+            <button class="btn-trav" data-trav="inorden">Inorden</button>
+            <button class="btn-trav" data-trav="postorden">Postorden</button>
+            <button class="btn-trav" data-trav="niveles">Por niveles</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Árbol de ejemplo</label>
+          <button class="btn-ghost full" id="btnSample">Cargar ejemplo</button>
+          <button class="btn-ghost full" id="btnClear" style="margin-top:8px">Limpiar árbol</button>
+        </div>
+
+        <div id="treeLog" class="log-box">
+          <p class="log-placeholder">Las operaciones aparecerán aquí…</p>
+        </div>
+      </div>
+
+      <!-- Canvas del árbol -->
+      <div class="canvas-wrap">
+        <canvas id="treeCanvas"></canvas>
+        <div id="treeInfo" class="tree-info"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GRAFOS -->
+  <section id="grafos" class="section">
+    <div class="section-header">
+      <span class="tag">Módulo 03</span>
+      <h2>Simulación: Grafos y Recorridos</h2>
+    </div>
+
+    <div class="sim-layout">
+      <!-- Panel de control grafos -->
+      <div class="control-panel">
+        <h3>Controles</h3>
+
+        <div class="control-group">
+          <label>Agregar nodo</label>
+          <div class="input-row">
+            <input type="text" id="graphNodeInput" placeholder="Nombre (A, B…)" maxlength="3" />
+            <button class="btn-action" id="btnAddNode">Agregar</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Agregar arista</label>
+          <div class="input-row">
+            <input type="text" id="graphEdgeFrom" placeholder="Desde" maxlength="3" style="width:70px" />
+            <span style="color:var(--accent)">→</span>
+            <input type="text" id="graphEdgeTo" placeholder="Hasta" maxlength="3" style="width:70px" />
+            <button class="btn-action" id="btnAddEdge">+</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Eliminar nodo</label>
+          <div class="input-row">
+            <input type="text" id="graphDelNode" placeholder="Nombre" maxlength="3" />
+            <button class="btn-action btn-delete" id="btnDelNode">Eliminar</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Recorridos desde nodo</label>
+          <div class="input-row">
+            <input type="text" id="graphStart" placeholder="Inicio" maxlength="3" style="width:80px" />
+          </div>
+          <div class="traversal-btns" style="margin-top:8px">
+            <button class="btn-trav" id="btnBFS">BFS</button>
+            <button class="btn-trav" id="btnDFS">DFS</button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label>Ejemplos</label>
+          <button class="btn-ghost full" id="btnGraphSample">Cargar ejemplo</button>
+          <button class="btn-ghost full" id="btnGraphClear" style="margin-top:8px">Limpiar grafo</button>
+        </div>
+
+        <div class="control-group" style="font-size:0.75rem;color:var(--muted)">
+          💡 Puedes arrastrar los nodos en el canvas
+        </div>
+
+        <div id="graphLog" class="log-box">
+          <p class="log-placeholder">Las operaciones aparecerán aquí…</p>
+        </div>
+      </div>
+
+      <!-- Canvas del grafo -->
+      <div class="canvas-wrap">
+        <canvas id="graphCanvas"></canvas>
+        <div id="graphInfo" class="tree-info"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>DataTree · Plataforma Educativa de Árboles y Grafos · Estructuras de Datos 2025</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
