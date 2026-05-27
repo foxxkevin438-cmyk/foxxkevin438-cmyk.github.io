@@ -587,16 +587,6 @@ footer {
   transform: translateY(-4px);
 }
 
-/* Tarjetas destacadas (mis videos) */
-.video-card--featured {
-  border-color: rgba(139,92,246,0.4);
-  box-shadow: 0 0 0 1px rgba(139,92,246,0.15), 0 4px 24px rgba(139,92,246,0.08);
-}
-.video-card--featured:hover {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 1px rgba(139,92,246,0.4), 0 8px 32px rgba(139,92,246,0.18);
-}
-
 .video-badge {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -606,13 +596,6 @@ footer {
   border-bottom: 1px solid var(--border);
   padding: 10px 20px;
   letter-spacing: 0.5px;
-}
-
-/* Badge especial para mis videos */
-.video-badge--own {
-  color: #f0c040;
-  background: rgba(240,192,64,0.1);
-  border-bottom-color: rgba(240,192,64,0.2);
 }
 
 .video-wrapper {
@@ -657,13 +640,6 @@ footer {
   border: 1px solid rgba(6,182,212,0.2);
   padding: 3px 10px;
   border-radius: 20px;
-}
-
-/* Tag especial para mis videos */
-.vtag--own {
-  color: #f0c040;
-  background: rgba(240,192,64,0.08);
-  border-color: rgba(240,192,64,0.25);
 }
 
 @media (max-width: 768px) {
